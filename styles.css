@@ -223,6 +223,21 @@ body {
 
 .dots button:hover { transform: scale(1.35); }
 
+
+/* ---------- 更窄屏幕: 覆盖文字进一步缩小, 确保不超出白色面板 ---------- */
+@media (max-width: 700px) {
+  .fl .title { font-size: calc(var(--su) * 4.6) !important; }
+  .fl .q { font-size: calc(var(--su) * 2.2) !important; }
+  .fl .lbl { font-size: calc(var(--su) * 1.7) !important; }
+  .fl .kicker { font-size: calc(var(--su) * 1.2) !important; }
+}
+@media (max-width: 480px) {
+  .fl .title { font-size: calc(var(--su) * 4) !important; }
+  .fl .q { font-size: calc(var(--su) * 1.9) !important; }
+  .fl .lbl { font-size: calc(var(--su) * 1.5) !important; }
+  .fl .kicker { font-size: calc(var(--su) * 1.1) !important; }
+}
+
 /* ---------- reduced motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
