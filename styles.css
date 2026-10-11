@@ -144,14 +144,16 @@ body {
 
 /* ---------- examples pages ---------- */
 
-.ex1, .ex2 { background: #ebe6d8; }
+.ex1, .ex2 { background: #ffffff; }
 .s11 { background: #302d29; }
 
 .s11vid {
   position: absolute;
-  inset: 0;
-  width: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   height: 100%;
+  width: auto;
   object-fit: cover;
 }
 
