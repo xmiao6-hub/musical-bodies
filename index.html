@@ -290,13 +290,14 @@
   <!-- ============ SECTION 11 (VIDEO) ============ -->
   <section class="panel s11" id="s11">
     <div class="stage">
-      <video class="s11vid" src="assets/section11.mp4?v=20261011hd" autoplay loop playsinline></video>
+      <video class="s11vid" src="assets/section11.mp4?v=20261011hd" autoplay muted loop playsinline id="s11video"></video>
       <div style="position:absolute;left:7%;top:12%;font-size:3.2vw;opacity:0.42;animation:mbbob 4.5s ease-in-out infinite alternate;--amp:1.8vh;">🎻</div>
       <div style="position:absolute;left:88%;top:18%;font-size:2.5vw;opacity:0.36;animation:mbbob 5.5s ease-in-out -1.2s infinite alternate;--amp:1.4vh;">🎻</div>
       <div style="position:absolute;left:12%;top:72%;font-size:2.2vw;opacity:0.32;animation:mbbob 6s ease-in-out -2.4s infinite alternate;--amp:1.6vh;">🎻</div>
       <div style="position:absolute;left:91%;top:68%;font-size:3.6vw;opacity:0.4;animation:mbbob 5s ease-in-out -0.6s infinite alternate;--amp:2vh;">🎻</div>
       <div style="position:absolute;left:30%;top:6%;font-size:1.9vw;opacity:0.3;animation:mbbob 6.5s ease-in-out -3s infinite alternate;--amp:1.3vh;">🎻</div>
       <div style="position:absolute;left:70%;top:88%;font-size:2.8vw;opacity:0.38;animation:mbbob 4.8s ease-in-out -1.8s infinite alternate;--amp:1.7vh;">🎻</div>
+      <button onclick="const v=document.getElementById('s11video'); v.muted=!v.muted; this.textContent = v.muted ? '🔇 点击开启声音' : '🔊 声音已开启';" style="position:absolute;bottom:4%;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.4);padding:0.6em 1.6em;font-size:calc(1.4 * 0.5625vw);cursor:pointer;font-family:inherit;letter-spacing:0.05em;">🔇 点击开启声音</button>
     </div>
   </section>
 </main>
