@@ -77,6 +77,12 @@ body {
 
 /* ---------- 窄屏 (≤1100px): 每屏 = 全宽 16:9 画幅, 排版与电脑严格一致 ---------- */
 
+
+@keyframes mbplay {
+  from { translate: 0 -0.7vh; rotate: -14deg; }
+  to   { translate: 0 0.7vh; rotate: 14deg; }
+}
+
 /* floating layer — parallax drift (JS) */
 .fl {
   position: absolute;
