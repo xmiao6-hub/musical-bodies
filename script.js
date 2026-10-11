@@ -19,8 +19,9 @@
       const vis = Math.max(0, Math.min(1, 1 - (Math.abs(c) - 0.28) / 0.5));
       panel.style.setProperty("--vis", vis.toFixed(3));
 
+      const narrow = window.innerWidth <= 1100;   // 移动端/平板: 关闭视差, 保留淡入淡出
       for (const el of layers[i]) {
-        const sp = parseFloat(el.dataset.sp || "0.15");
+        const sp = narrow ? 0 : parseFloat(el.dataset.sp || "0.15");
         const ty = -c * sp * vh * 0.9;
         el.style.setProperty("--py", ty.toFixed(1) + "px");
       }
