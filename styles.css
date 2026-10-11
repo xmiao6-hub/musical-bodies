@@ -17,6 +17,9 @@ body {
 /* ---------- panels ---------- */
 
 .panel {
+  --stW: min(100vw, 177.78vh);
+  --su: calc(var(--stW) * 0.005625);
+  --suw: calc(var(--stW) / 100);
   position: relative;
   height: 100vh;
   height: 100svh;
@@ -34,9 +37,6 @@ body {
    the photo's own edge tone). Image and text share one coordinate space,
    so text stays exactly on its spots in the photo at any window size. */
 .stage {
-  --stW: min(100vw, 177.78vh);   /* stage width  */
-  --su: calc(var(--stW) * 0.005625); /* 1% of stage height */
-  --suw: calc(var(--stW) / 100);     /* 1% of stage width  */
   position: absolute;
   left: 50%;
   top: 50%;
@@ -60,6 +60,16 @@ body {
   inset: 0;
   opacity: var(--vis, 0);
   z-index: 2;
+}
+
+/* 正文层: 桌面时与舞台同框叠放, 手机时排在图片下方 */
+.fx-flow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--stW);
+  aspect-ratio: 16 / 9;
 }
 
 /* floating layer — parallax drift (JS) */
@@ -241,14 +251,21 @@ body {
     height: 100%;
     object-fit: cover;
   }
-  .fx { position: static; }
-  /* 所有浮动元素默认定位于图片上 (比例坐标与桌面一致) */
+  .fx, .fx-flow { opacity: var(--vis, 0); }
+  /* 图上覆盖元素: 比例坐标与桌面一致 */
   .fl {
     position: absolute;
     left: calc(var(--x, 0) * 1%);
     top: calc(var(--y, 0) * 1%);
     width: auto !important;
     margin: 0;
+    transform: none !important;
+  }
+  /* 正文层元素: 静态流式 */
+  .fl-flow {
+    position: static !important;
+    width: auto !important;
+    margin: 0 24px 22px !important;
     transform: none !important;
   }
   /* 图上的文字: 最小可读字号 */
