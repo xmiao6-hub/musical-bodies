@@ -213,63 +213,72 @@ body {
 .dots button:hover { transform: scale(1.35); }
 
 
-/* ---------- 移动端 / 平板重排 (≤1100px): 横幅图 + 大字纵向排列 ---------- */
+/* ---------- 移动端 / 平板 (≤1100px): 图片完整居中, 图上文字保留, 正文移到图下 ---------- */
 @media (max-width: 1100px) {
   .panel {
     height: auto;
     min-height: 100svh;
     scroll-snap-align: none;
   }
+  /* 舞台恢复 16:9 — 图片完整、居中、不裁切 */
   .stage {
-    position: static;
+    position: relative;
+    left: 0;
+    top: 0;
     transform: none;
     width: 100%;
-    aspect-ratio: auto;
+    height: auto;
+    aspect-ratio: 16 / 9;
     --stW: 100vw;
-    --su: 11px;
+    --su: calc(100vw * 0.005625);
     --suw: 1vw;
-    padding-bottom: 34px;
+    padding-bottom: 6px;
   }
   .plate {
-    position: static;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 44vh;
+    height: 100%;
     object-fit: cover;
-    display: block;
   }
   .fx { position: static; }
+  /* 所有浮动元素默认定位于图片上 (比例坐标与桌面一致) */
   .fl {
-    position: static !important;
+    position: absolute;
+    left: calc(var(--x, 0) * 1%);
+    top: calc(var(--y, 0) * 1%);
     width: auto !important;
+    margin: 0;
     transform: none !important;
-    margin: 0 24px 26px !important;
   }
-  .fl > * { animation: none; }
+  /* 图上的文字: 最小可读字号 */
+  .fl .title { font-size: clamp(15px, calc(var(--su) * 3.6), 40px) !important; }
+  .fl .q { font-size: clamp(11px, calc(var(--su) * 2.7), 27px) !important; white-space: nowrap !important; }
+  .fl .lbl { font-size: clamp(9px, calc(var(--su) * 2), 20px) !important; }
+  .fl .kicker { font-size: clamp(8px, calc(var(--su) * 1.5), 14px) !important; }
+  /* 正文/图注/美术馆标签: 移到图片下方文档流 */
+  .fl:has(.body), .fl:has(.lead), .fl:has(.cap), .fl:has(.label), .fl:has(.kicker) {
+    position: static;
+    width: auto !important;
+    margin: 16px 24px 20px;
+  }
+  .fl:has(.body) .body { font-size: 17px !important; line-height: 1.6 !important; }
+  .fl:has(.lead) .lead { font-size: 20px !important; line-height: 1.5 !important; }
+  .fl:has(.cap) .cap { font-size: 14px !important; }
+  .fl:has(.label) .label-artist { font-size: 20px !important; }
+  .fl:has(.label) .label-meta, .fl:has(.label) .label-mat { font-size: 15px !important; }
+  .body, .lead { width: auto !important; max-width: 62ch; }
   .vert { display: none; }
   .dots { display: none; }
   .ex-bg { background: #ebe6d8; }
   .artwork {
-    position: static;
-    width: 100%;
-    height: 46vh;
-    object-fit: cover;
-    display: block;
-    margin: 0 0 8px;
+    position: absolute;
+    left: 24%;
+    top: 5%;
+    width: 60%;
+    height: 90%;
+    object-fit: contain;
   }
-  /* 可读字号 (覆盖内联的 su 计算) */
-  .title { font-size: 34px !important; line-height: 1.15 !important; }
-  .kicker { font-size: 13px !important; }
-  .body { font-size: 17px !important; line-height: 1.6 !important; max-width: 62ch; }
-  .lead { font-size: 20px !important; line-height: 1.5 !important; }
-  .q { font-size: 26px !important; white-space: normal !important; }
-  .qcenter { text-align: left !important; }
-  .lbl { font-size: 19px !important; }
-  .cap { font-size: 14px !important; }
-  .label-artist { font-size: 21px !important; }
-  .label-meta { font-size: 15px !important; }
-  .label-title { font-size: 19px !important; }
-  .label-mat { font-size: 15px !important; }
-  .body, .lead { width: auto !important; }
 }
 
 /* ---------- reduced motion ---------- */
