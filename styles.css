@@ -257,16 +257,16 @@ body {
   .fl .lbl { font-size: clamp(9px, calc(var(--su) * 2), 20px) !important; }
   .fl .kicker { font-size: clamp(8px, calc(var(--su) * 1.5), 14px) !important; }
   /* 正文/图注/美术馆标签: 移到图片下方文档流 */
-  .fl:has(.body), .fl:has(.lead), .fl:has(.cap), .fl:has(.label), .fl:has(.kicker) {
-    position: static;
+  .fl-flow {
+    position: static !important;
     width: auto !important;
-    margin: 16px 24px 20px;
+    margin: 16px 24px 20px !important;
   }
-  .fl:has(.body) .body { font-size: 17px !important; line-height: 1.6 !important; }
-  .fl:has(.lead) .lead { font-size: 20px !important; line-height: 1.5 !important; }
-  .fl:has(.cap) .cap { font-size: 14px !important; }
-  .fl:has(.label) .label-artist { font-size: 20px !important; }
-  .fl:has(.label) .label-meta, .fl:has(.label) .label-mat { font-size: 15px !important; }
+  .fl-flow .body { font-size: 17px !important; line-height: 1.6 !important; }
+  .fl-flow .lead { font-size: 20px !important; line-height: 1.5 !important; }
+  .fl-flow .cap { font-size: 14px !important; }
+  .fl-flow .label-artist { font-size: 20px !important; }
+  .fl-flow .label-meta, .fl-flow .label-mat { font-size: 15px !important; }
   .body, .lead { width: auto !important; max-width: 62ch; }
   .vert { display: none; }
   .dots { display: none; }
