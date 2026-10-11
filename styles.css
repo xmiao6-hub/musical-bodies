@@ -60,6 +60,7 @@ body {
   inset: 0;
   opacity: var(--vis, 0);
   z-index: 2;
+  animation: bob var(--dur, 7s) ease-in-out var(--dl, 0s) infinite alternate;
 }
 
 /* 正文层: 桌面时与舞台同框叠放, 手机时排在图片下方 */
@@ -68,8 +69,10 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  translate: 0 var(--py, 0px);
   width: var(--stW);
   aspect-ratio: 16 / 9;
+  animation: bob var(--dur, 7s) ease-in-out var(--dl, 0s) infinite alternate;
 }
 
 /* ---------- 窄屏 (≤1100px): 每屏 = 全宽 16:9 画幅, 排版与电脑严格一致 ---------- */
@@ -79,21 +82,14 @@ body {
   position: absolute;
   left: calc(var(--x, 0) * 1%);
   top: calc(var(--y, 0) * 1%);
-  transform: translate3d(0, var(--py, 0px), 0);
-  will-change: transform;
 }
 
 .fl[style*="--w"] { width: calc(var(--w) * var(--suw)); }
 
 /* idle float — gentle bob, staggered per element */
-.fl > * {
-  animation: bob var(--dur, 7s) ease-in-out var(--dl, 0s) infinite alternate;
-  will-change: transform;
-}
-
 @keyframes bob {
-  from { transform: translateY(calc(var(--amp, 6px) * -1)); }
-  to   { transform: translateY(var(--amp, 6px)); }
+  from { translate: 0 calc(var(--amp, 6px) * -1); }
+  to   { translate: 0 var(--amp, 6px); }
 }
 
 /* ---------- typography ---------- */

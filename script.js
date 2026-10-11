@@ -2,7 +2,6 @@
 
 (() => {
   const panels = Array.from(document.querySelectorAll(".panel"));
-  const layers = panels.map((p) => Array.from(p.querySelectorAll(".fl")));
   const dots = Array.from(document.querySelectorAll(".dots button"));
 
   function update() {
@@ -19,9 +18,9 @@
       const vis = Math.max(0, Math.min(1, 1 - (Math.abs(c) - 0.28) / 0.5));
       panel.style.setProperty("--vis", vis.toFixed(3));
 
-      const narrow = window.innerWidth <= 1100;   // 移动端/平板: 关闭视差, 保留淡入淡出
-      for (const el of layers[i]) {
-        const sp = narrow ? 0 : parseFloat(el.dataset.sp || "0.15");
+      const narrow = window.innerWidth <= 1100;
+      const sp = narrow ? 0 : 0.12;   // 整层统一视差, 层内元素永不相对移动
+      for (const el of [...document.querySelectorAll(`#${panel.id} .fx, #${panel.id} .fx-flow`)]) {
         const ty = -c * sp * vh * 0.9;
         el.style.setProperty("--py", ty.toFixed(1) + "px");
       }
