@@ -79,8 +79,8 @@ body {
 
 
 @keyframes mbplay {
-  from { translate: 0 -0.7vh; rotate: -14deg; }
-  to   { translate: 0 0.7vh; rotate: 14deg; }
+  from { translate: 0 -1.8vh; rotate: -28deg; }
+  to   { translate: 0 1.8vh; rotate: 28deg; }
 }
 
 /* floating layer — parallax drift (JS) */
