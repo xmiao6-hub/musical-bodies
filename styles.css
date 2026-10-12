@@ -270,3 +270,8 @@ body {
   html { scroll-behavior: auto; }
   .fl > * { animation: none; }
 }
+
+/* ---------- figure numbers ---------- */
+@media (max-width: 700px) {
+  .figno { font-size: 6px !important; }
+}
