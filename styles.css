@@ -31,6 +31,10 @@ body {
 /* letterbox bars match each photo's edge tone */
 .s1, .s2, .s9 { background: #ebe6d8; }
 .s3, .s4, .s5, .s6, .s7, .s8 { background: #ebe6d8; }
+
+#s6 .stage {
+  animation: bob var(--dur, 7s) ease-in-out var(--dl, 0s) infinite alternate;
+}
 .s10 { background: #302d29; }
 
 /* stage: the 16:9 design canvas, always fully visible (letterboxed with
