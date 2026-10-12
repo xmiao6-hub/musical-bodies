@@ -34,20 +34,14 @@ body {
 
 .s4subject {
   position: absolute;
-  left: 58.36%;
-  top: 21.53%;
-  width: 31.56%;
+  left: 25.78%;
+  top: 18.06%;
+  width: 64.84%;
   user-select: none;
   pointer-events: none;
   opacity: var(--pvis, 1);
   animation: bob 3.5s ease-in-out infinite alternate;
-  --amp: 40px;
-}
-#s9 .fx,
-#s9 .fx-flow,
-#s10 .fx,
-#s10 .fx-flow {
-  animation: none;
+  --amp: 20px;
 }
 #s4 .plate {
   opacity: var(--pvis, 1);
