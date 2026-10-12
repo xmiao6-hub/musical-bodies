@@ -35,6 +35,7 @@ body {
 #s6 .stage {
   animation: bob var(--dur, 7s) ease-in-out var(--dl, 0s) infinite alternate;
 }
+#s4 .stage,
 #s7 .stage {
   animation: bob 3.5s ease-in-out infinite alternate;
   --amp: 40px;
