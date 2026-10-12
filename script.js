@@ -50,6 +50,24 @@
     dots.forEach((d, i) => d.classList.toggle("on", i === best));
   }
 
+
+  // S11 视频: 第一次用户交互后自动开启音乐 (浏览器政策要求用户交互)
+  const s11video = document.getElementById("s11video");
+  if (s11video) {
+    const enableS11Sound = () => {
+      s11video.muted = false;
+      s11video.play().catch(() => {});
+      const btn = document.querySelector("#s11 button");
+      if (btn) btn.textContent = "🔊 音乐已开启";
+      document.removeEventListener("click", enableS11Sound);
+      document.removeEventListener("touchstart", enableS11Sound);
+      document.removeEventListener("keydown", enableS11Sound);
+    };
+    document.addEventListener("click", enableS11Sound);
+    document.addEventListener("touchstart", enableS11Sound);
+    document.addEventListener("keydown", enableS11Sound);
+  }
+
   function onScroll() {
     update();
   }
