@@ -77,7 +77,7 @@
     const sec = t / 1000;
     panels.forEach((panel, i) => {
       const isS10 = panel.id === "s10";
-      const amp = isS10 ? 60 : 10;                    // 倒数第二页: 非常明显的漂浮
+      const amp = isS10 ? 100 : 20;                    // 倒数第二页: 非常明显的漂浮
       const speed = isS10 ? 1.6 : 0.9;
       const phase = i * 1.3;
       const y = Math.sin(sec * speed + phase) * amp;
