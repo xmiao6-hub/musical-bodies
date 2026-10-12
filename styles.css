@@ -194,11 +194,11 @@ body {
 
 .label-artist {
   font-weight: 700;
-  font-size: calc(2.5 * 0.5625vw);
+  font-size: calc(2.5 * var(--su));
 }
 
 .label-meta {
-  font-size: calc(1.7 * 0.5625vw);
+  font-size: calc(1.7 * var(--su));
   opacity: 0.85;
   margin-top: 0.5em;
 }
@@ -206,12 +206,12 @@ body {
 .label-title {
   font-style: italic;
   font-weight: 600;
-  font-size: calc(2.4 * 0.5625vw);
+  font-size: calc(2.4 * var(--su));
   margin-top: 1.4em;
 }
 
 .label-mat {
-  font-size: calc(1.6 * 0.5625vw);
+  font-size: calc(1.6 * var(--su));
   line-height: 1.5;
   margin-top: 1.1em;
   opacity: 0.92;
@@ -252,16 +252,16 @@ body {
 
 /* ---------- 更窄屏幕: 覆盖文字进一步缩小, 确保不超出白色面板 ---------- */
 @media (max-width: 700px) {
-  .fl .title { font-size: calc(4.6 * 0.5625vw) !important; }
-  .fl .q { font-size: calc(2.2 * 0.5625vw) !important; }
-  .fl .lbl { font-size: calc(1.7 * 0.5625vw) !important; }
-  .fl .kicker { font-size: calc(1.2 * 0.5625vw) !important; }
+  .fl .title { font-size: calc(4.6 * var(--su)) !important; }
+  .fl .q { font-size: calc(2.2 * var(--su)) !important; }
+  .fl .lbl { font-size: calc(1.7 * var(--su)) !important; }
+  .fl .kicker { font-size: calc(1.2 * var(--su)) !important; }
 }
 @media (max-width: 480px) {
-  .fl .title { font-size: calc(4 * 0.5625vw) !important; }
-  .fl .q { font-size: calc(1.9 * 0.5625vw) !important; }
-  .fl .lbl { font-size: calc(1.5 * 0.5625vw) !important; }
-  .fl .kicker { font-size: calc(1.1 * 0.5625vw) !important; }
+  .fl .title { font-size: calc(4 * var(--su)) !important; }
+  .fl .q { font-size: calc(1.9 * var(--su)) !important; }
+  .fl .lbl { font-size: calc(1.5 * var(--su)) !important; }
+  .fl .kicker { font-size: calc(1.1 * var(--su)) !important; }
 }
 
 /* ---------- reduced motion ---------- */
