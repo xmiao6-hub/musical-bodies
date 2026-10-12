@@ -58,15 +58,22 @@
   const floatTick = (t) => {
     const sec = t / 1000;
     panels.forEach((panel, i) => {
-      const amp = 10;
+      const isS10 = panel.id === "s10";
+      const amp = isS10 ? 24 : 10;                    // 第十页: 特别明显的漂浮
+      const speed = isS10 ? 1.3 : 0.9;
       const phase = i * 1.3;
-      const y = Math.sin(sec * 0.9 + phase) * amp;
+      const y = Math.sin(sec * speed + phase) * amp;
       panel.querySelectorAll(".fx, .fx-flow").forEach((el) => {
         el.style.translate = `0 ${y.toFixed(1)}px`;
       });
       if (panel.id === "s6") {
         const st = panel.querySelector(".stage");
         if (st) st.style.translate = `0 ${y.toFixed(1)}px`;
+      }
+      // EXAMPLES 页: 作品图片轻轻漂浮
+      if (panel.id === "ex1" || panel.id === "ex2") {
+        const art = panel.querySelector(".artwork");
+        if (art) art.style.translate = `0 ${(y * 1.2).toFixed(1)}px`;
       }
     });
     requestAnimationFrame(floatTick);
