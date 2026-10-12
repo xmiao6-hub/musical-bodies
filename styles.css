@@ -272,12 +272,11 @@ body {
 }
 
 /* ---------- figure numbers ---------- */
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .figno { font-size: 6px !important; }
+  .srcblk { font-size: 6px !important; width: 60% !important; }
+  .srccite { font-size: 6px !important; }
 }
 
 /* ---------- sources block mobile ---------- */
-@media (max-width: 700px) {
-  .srcblk { font-size: 7px !important; width: 60% !important; }
-  .srccite { font-size: 7px !important; }
-}
+
