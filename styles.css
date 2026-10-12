@@ -35,6 +35,10 @@ body {
 #s6 .stage {
   animation: bob var(--dur, 7s) ease-in-out var(--dl, 0s) infinite alternate;
 }
+#s7 .stage {
+  animation: bob 3.5s ease-in-out infinite alternate;
+  --amp: 40px;
+}
 .s10 { background: #302d29; }
 
 /* stage: the 16:9 design canvas, always fully visible (letterboxed with
