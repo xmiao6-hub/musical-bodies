@@ -40,6 +40,9 @@ body {
   animation: bob 3.5s ease-in-out infinite alternate;
   --amp: 40px;
 }
+#s4 .plate {
+  opacity: var(--pvis, 1);
+}
 .s10 { background: #302d29; }
 
 /* stage: the 16:9 design canvas, always fully visible (letterboxed with

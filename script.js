@@ -18,6 +18,12 @@
       const vis = Math.max(0, Math.min(1, 1 - (Math.abs(c) - 0.28) / 0.5));
       panel.style.setProperty("--vis", vis.toFixed(3));
 
+      // S4 图像淡入: 滑到本页开始, 接近中心完成
+      if (panel.id === "s4") {
+        const iv = Math.max(0, Math.min(1, 1 - (Math.abs(c) - 0.35) / 0.6));
+        panel.style.setProperty("--pvis", iv.toFixed(3));
+      }
+
       const narrow = window.innerWidth <= 1100;
       const sp = narrow ? 0 : 0.12;   // 整层统一视差, 层内元素永不相对移动
       for (const el of [...document.querySelectorAll(`#${panel.id} .fx, #${panel.id} .fx-flow`)]) {
