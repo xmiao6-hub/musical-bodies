@@ -90,10 +90,6 @@
       panel.querySelectorAll(".fx, .fx-flow").forEach((el) => {
         el.style.translate = `0 ${y.toFixed(1)}px`;
       });
-      if (panel.id === "s6") {
-        const st = panel.querySelector(".stage");
-        if (st) st.style.translate = `0 ${y.toFixed(1)}px`;
-      }
       // EXAMPLES 页: 作品图片轻轻漂浮
       if (panel.id === "ex1" || panel.id === "ex2") {
         const art = panel.querySelector(".artwork");

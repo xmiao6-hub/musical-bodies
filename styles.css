@@ -32,9 +32,6 @@ body {
 .s1, .s2, .s9 { background: #ebe6d8; }
 .s3, .s4, .s5, .s6, .s7, .s8 { background: #ebe6d8; }
 
-#s6 .stage {
-  animation: bob var(--dur, 7s) ease-in-out var(--dl, 0s) infinite alternate;
-}
 #s4 .stage,
 #s7 .stage {
   animation: bob 3.5s ease-in-out infinite alternate;
