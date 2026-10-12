@@ -54,6 +54,25 @@
     update();
   }
 
+  // 全站漂浮: JS 驱动 (rAF 持续循环) — 每屏的文字层与画面一起缓缓浮动
+  const floatTick = (t) => {
+    const sec = t / 1000;
+    panels.forEach((panel, i) => {
+      const amp = 10;
+      const phase = i * 1.3;
+      const y = Math.sin(sec * 0.9 + phase) * amp;
+      panel.querySelectorAll(".fx, .fx-flow").forEach((el) => {
+        el.style.translate = `0 ${y.toFixed(1)}px`;
+      });
+      if (panel.id === "s6") {
+        const st = panel.querySelector(".stage");
+        if (st) st.style.translate = `0 ${y.toFixed(1)}px`;
+      }
+    });
+    requestAnimationFrame(floatTick);
+  };
+  requestAnimationFrame(floatTick);
+
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll);
   window.addEventListener("load", onScroll);
