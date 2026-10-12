@@ -32,10 +32,15 @@ body {
 .s1, .s2, .s9 { background: #ebe6d8; }
 .s3, .s4, .s5, .s6, .s7, .s8 { background: #ebe6d8; }
 
-#s4 .stage,
-#s7 .stage {
+#s4 .stage {
   animation: bob 3.5s ease-in-out infinite alternate;
   --amp: 40px;
+}
+#s9 .fx,
+#s9 .fx-flow,
+#s10 .fx,
+#s10 .fx-flow {
+  animation: none;
 }
 #s4 .plate {
   opacity: var(--pvis, 1);

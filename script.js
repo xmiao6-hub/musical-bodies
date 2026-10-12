@@ -82,9 +82,9 @@
   const floatTick = (t) => {
     const sec = t / 1000;
     panels.forEach((panel, i) => {
-      const isS10 = panel.id === "s10";
-      const amp = isS10 ? 100 : 20;                    // 倒数第二页: 非常明显的漂浮
-      const speed = isS10 ? 1.6 : 0.9;
+      const still = panel.id === "s9" || panel.id === "s10";
+      const amp = still ? 0 : 20;
+      const speed = 0.9;
       const phase = i * 1.3;
       const y = Math.sin(sec * speed + phase) * amp;
       panel.querySelectorAll(".fx, .fx-flow").forEach((el) => {
