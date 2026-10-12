@@ -24,6 +24,19 @@
         const ty = -c * sp * vh * 0.9;
         el.style.setProperty("--py", ty.toFixed(1) + "px");
       }
+
+      // S11 视频页浮动元素: JS 驱动 (音符 + 大提琴图标) — 不依赖 CSS 动画
+      if (panel.id === "s11") {
+        const now = performance.now() / 1000;
+        document.querySelectorAll("#s11 .s11float").forEach((el) => {
+          const ph = parseFloat(el.style.getPropertyValue("--ph") || "0");
+          const spd = parseFloat(el.style.getPropertyValue("--sp") || "1");
+          const y = Math.sin(now * spd + ph) * 16;
+          const r = Math.sin(now * spd * 0.6 + ph) * 9;
+          el.style.translate = `0 ${y.toFixed(1)}px`;
+          el.style.rotate = `${r.toFixed(1)}deg`;
+        });
+      }
     });
 
     // active dot
