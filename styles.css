@@ -32,7 +32,14 @@ body {
 .s1, .s2, .s9 { background: #ebe6d8; }
 .s3, .s4, .s5, .s6, .s7, .s8 { background: #ebe6d8; }
 
-#s4 .stage {
+.s4subject {
+  position: absolute;
+  left: 58.36%;
+  top: 21.53%;
+  width: 31.56%;
+  user-select: none;
+  pointer-events: none;
+  opacity: var(--pvis, 1);
   animation: bob 3.5s ease-in-out infinite alternate;
   --amp: 40px;
 }
